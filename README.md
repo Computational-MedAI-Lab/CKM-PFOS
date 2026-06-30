@@ -13,4 +13,5 @@ The workflow implemented in this repository includes:
 - Molecular Dynamics Simulations​:Evaluation of binding stability, conformational changes, and interaction profiles over time.
 
 - Machine Learning Models​:Construction and validation of predictive models for CKM risk based on omics features.
-See [MD Simulation Details](Molecular-Dynamic/MD_PIPELINE_DETAIL.md)
+
+- See [MD Simulation Details](Molecular-Dynamic/MD_PIPELINE_DETAIL.md)
