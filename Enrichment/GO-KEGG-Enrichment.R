@@ -1,65 +1,65 @@
-library(clusterProfiler)
-library(org.Hs.eg.db)
-library(ggplot2)
-library(ggnewscale)
+library(clusterProfiler)   库(clusterProfiler)
+library(org.Hs.eg.db)   库(org.Hs.eg.db)
+library(ggplot2)   库(ggplot2)
+library(ggnewscale)   图书馆(ggnewscale)
 library(stringr)
-library(scales)
-library(DOSE)
+library(scales)   库(尺度)
+library(DOSE)   库(剂量)
 library(enrichplot)
-library(tidyverse)
-library(openxlsx)
+library(tidyverse)   库(tidyverse)
+library(openxlsx)   库(openxlsx)
 
 # Set working directory
 path="C:/Users/29077/Desktop/20251203-enrichment"
-setwd(path)
+setwd(path)   setwd(路径)
 
 # Load gene list (Entrez Gene ID)
 genes_raw <- read.table("gene_intersection_482.txt", header = FALSE)$V1
 gene_list <- genes_raw[genes_raw != "gene_intersection_482"]
-length(gene_list)
+length(gene_list)   长度(gene_list)
 
 # Convert Gene Symbol to Entrez ID (required for KEGG analysis)
-gene_entrez <- mapIds(org.Hs.eg.db,
-                      keys = gene_list,
+gene_entrez <- mapIds(org.Hs.eg.db,gene_entrez <- mapIds(org. hs . egg .db)；
+                      keys = gene_list,   键= gene_list，
                       column = "ENTREZID",
-                      keytype = "SYMBOL",
+                      keytype =    keytype = "SYMBOL"，"SYMBOL",
                       multiVals = "first")
 gene_entrez <- na.omit(gene_entrez)
 
 # GO enrichment analysis
-ego_bp <- enrichGO(gene          = gene_entrez,
+ego_bp <- enrichGO(gene          = gene_entrez,ego_bp <- enrichment go (gene = gene_entrez，
                    OrgDb         = org.Hs.eg.db,
-                   keyType       = 'ENTREZID',
-                   ont           = "BP",
-                   pAdjustMethod = "BH",
-                   pvalueCutoff  = 0.05,
-                   qvalueCutoff  = 0.2,
+                   keyType       = keyType = 'ENTREZID'，'ENTREZID',
+                   ont           = ont = "BP"，"BP",
+                   pAdjustMethod =    pAdjustMethod = "BH"，"BH",
+                   pvalueCutoff  =    pvalueCutoff = 0.05，0.05,
+                   qvalueCutoff  =    qvalueCutoff = 0.2；0.2,
                    readable      = TRUE)
 
-ego_mf <- enrichGO(gene          = gene_entrez,
+ego_mf <- enrichGO(gene          = gene_entrez,ego_mf <- enrichment go (gene = gene_entrez，
                    OrgDb         = org.Hs.eg.db,
-                   keyType       = 'ENTREZID',
-                   ont           = "MF",
-                   pAdjustMethod = "BH",
-                   pvalueCutoff  = 0.05,
-                   qvalueCutoff  = 0.2,
+                   keyType       = keyType = 'ENTREZID'，'ENTREZID',
+                   ont           = ont = "MF"，"MF",
+                   pAdjustMethod =    pAdjustMethod = "BH"，"BH",
+                   pvalueCutoff  =    pvalueCutoff = 0.05，0.05,
+                   qvalueCutoff  =    qvalueCutoff = 0.2；0.2,
                    readable      = TRUE)
 
-ego_cc <- enrichGO(gene          = gene_entrez,
+ego_cc <- enrichGO(gene          = gene_entrez,ego_cc <- enrichment go (gene = gene_entrez，
                    OrgDb         = org.Hs.eg.db,
-                   keyType       = 'ENTREZID',
-                   ont           = "CC",
-                   pAdjustMethod = "BH",
-                   pvalueCutoff  = 0.05,
-                   qvalueCutoff  = 0.2,
+                   keyType       = keyType = 'ENTREZID'，'ENTREZID',
+                   ont           = ont = "CC"，"CC",
+                   pAdjustMethod =    pAdjustMethod = "BH"，"BH",
+                   pvalueCutoff  =    pvalueCutoff = 0.05，0.05,
+                   qvalueCutoff  =    qvalueCutoff = 0.2；0.2,
                    readable      = TRUE)
 print(ego_bp)
 print(ego_mf)
 print(ego_cc)
 
 # Combine GO results and add ontology labels
-go_bp_df <- as.data.frame(ego_bp)
-go_bp_df$Category <- "Biological Process"
+go_bp_df <- as.data.frame(ego_bp)Go_bp_df <- as.data.frame（ego_bp）
+go_bp_df$Category <- go_bp_df$Category <-“生物过程”"Biological Process"
 
 go_mf_df <- as.data.frame(ego_mf)
 go_mf_df$Category <- "Molecular Function"
