@@ -1,17 +1,5 @@
-# CKM-PFOS
-- All scripts were developed to support the bioinformatics and computational chemistry analyses presented in the manuscript, including WGCNA, molecular docking, molecular dynamics (MD) simulations, enrichment analysis, and machine learning modeling.
-
-- Per- and polyfluoroalkyl substances (PFAS), such as perfluorooctanesulfonic acid (PFOS), have been implicated in cardiometabolic disorders. This project integrates transcriptomic data analysis with structure-based computational approaches to explore the molecular mechanisms linking PFOS exposure to Cardiometabolic Multimorbidity (CKM).
-The workflow implemented in this repository includes:
-
-- WGCNA (Weighted Gene Co-Expression Network Analysis)​:Identification of gene modules associated with PFOS exposure and CKM phenotypes.
-
-- Functional Enrichment Analysis​:GO, KEGG, and pathway-level annotation of key gene modules.
-
-- Molecular Docking​:Prediction of PFOS–protein interactions to identify potential molecular targets.
-
-- Molecular Dynamics Simulations​:Evaluation of binding stability, conformational changes, and interaction profiles over time.
-
-- Machine Learning Models​:Construction and validation of predictive models for CKM risk based on omics features.
-
-- See [MD Simulation Details](Molecular-Dynamic/MD_PIPELINE_DETAIL.md)
+# Industrial crop-derived phytochemicals targeting PFOS-associated cardiovascular-kidney-metabolic dysfunction: an integrated systems toxicology and molecular simulation study
+- Perfluorooctane sulfonic acid (PFOS), a persistent per- and polyfluoroalkyl substance (PFAS), has been increasingly associated with dyslipidemia, cardiovascular disease, metabolic disorders, and renal dysfunction. However, the shared molecular mechanisms potentially linking chronic PFOS exposure to cardiovascular-kidney-metabolic (CKM) dysfunction remain insufficiently understood.
+In this study, an integrated systems toxicology framework combining toxicogenomic prediction, cross-disease transcriptomic analysis, weighted gene co-expression network analysis, machine learning, molecular docking, molecular dynamics simulations, and phytochemical virtual screening was applied to identify PFOS-associated molecular targets and candidate plant-derived modulators. Cross-disease integration identified 26 PFOS-associated candidate genes, among which FABP4, MMP7, MMP9, and SPP1 emerged as recurrent molecular nodes associated with lipid metabolism, inflammatory signaling, and extracellular matrix remodeling across multiple CKM-related conditions.
+Molecular docking and 100 ns molecular dynamics simulations supported the potential for stable interactions between PFOS and nine prioritized proteins, suggesting plausible molecular perturbation pathways underlying PFOS-associated multisystem toxicity. In addition, virtual screening identified several high-affinity phytochemicals derived from medicinal crops, including Glycyrrhizae Radix, Epimedii Folium, Mori Cortex, and Rosae Chinensis Flos, with predicted multi-target interactions against PFOS-associated proteins. Flavonoids represented the predominant phytochemical superclass among the high-affinity candidates.
+Collectively, these findings provide a systems-level framework linking chronic PFOS exposure to integrated cardiometabolic and renal dysfunction and highlight the potential value of medicinal crop-derived phytochemicals as candidate bioactive resources for future nutraceutical and phytopharmaceutical strategies targeting environmentally associated CKM toxicity.
